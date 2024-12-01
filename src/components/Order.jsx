@@ -121,12 +121,36 @@ export default function Order() {
               <Input type="checkbox" />
               <Label check>Ananas</Label>
             </FormGroup>
-            <FormGroup className="checkbox" check inline>
+            <FormGroup className="checkbox p-margin" check inline>
               <Input type="checkbox" />
               <Label check>Kabak</Label>
             </FormGroup>
           </Form>
         </div>
+      </div>
+      <div className="fullName">
+        <h2>Ad Soyad</h2>
+        <FormGroup>
+          <Label for="text"></Label>
+          <Input
+            type="textarea"
+            id="text"
+            placeholder="Ad soyad giriniz.."
+            className="inputName"
+          ></Input>
+        </FormGroup>
+      </div>
+      <div className="orderNote">
+        <h2>Sipariş Notu</h2>
+        <FormGroup>
+          <Label for="orderNote"></Label>
+          <Input
+            type="textarea"
+            id="orderNote"
+            placeholder="Sipariş notunuzu giriniz.."
+            className="orderNote"
+          ></Input>
+        </FormGroup>
       </div>
     </main>
   );
