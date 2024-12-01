@@ -1,6 +1,7 @@
 import "../styles/order.css";
 import React from "react";
 import { Col, Form, FormGroup, Label, Input } from "reactstrap";
+import ExtraItem from "./OrderItem";
 
 export default function Order() {
   return (
@@ -69,62 +70,20 @@ export default function Order() {
           <h2>Ek Malzemeler</h2>
           <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
           <Form className="form-2">
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Pepperoni</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Sosis</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Kanada Jambonu</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Tavuk Izgara</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Soğan</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Domates</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Mısır</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Sucuk</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Jalepeno</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Sarımsak</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Biber</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Salam</Label>
-            </FormGroup>
-            <FormGroup className="checkbox" check inline>
-              <Input type="checkbox" />
-              <Label check>Ananas</Label>
-            </FormGroup>
-            <FormGroup className="checkbox p-margin" check inline>
-              <Input type="checkbox" />
-              <Label check>Kabak</Label>
-            </FormGroup>
+            <ExtraItem name="pepperoni" label="Pepperoni" />
+            <ExtraItem name="sosis" label="Sosis" />
+            <ExtraItem name="kanada-jambonu" label="Kanada Jambonu" />
+            <ExtraItem name="tavuk-izgara" label="Tavuk Izgara" />
+            <ExtraItem name="sogan" label="Soğan" />
+            <ExtraItem name="domates" label="Domates" />
+            <ExtraItem name="misir" label="Mısır" />
+            <ExtraItem name="sucuk" label="Sucuk" />
+            <ExtraItem name="jalepeno" label="Jalepeno" />
+            <ExtraItem name="sarimsak" label="Sarımsak" />
+            <ExtraItem name="biber" label="Biber" />
+            <ExtraItem name="salam" label="Salam" />
+            <ExtraItem name="ananas" label="Ananas" />
+            <ExtraItem name="kabak" label="Kabak" />
           </Form>
         </div>
       </div>
