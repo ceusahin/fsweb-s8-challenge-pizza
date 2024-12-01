@@ -54,6 +54,10 @@ main {
   /* justify-content: space-between; */
 }
 
+.select {
+  border-radius: 0.47rem;
+}
+
 .checkbox {
   margin-bottom: 0.9rem;
 }
