@@ -14,7 +14,7 @@ export default function Order() {
         </div>
       </div>
       <div className="explanation">
-        <p>
+        <p className="p-margin">
           Frontend Dev olarak hala position:Absolute kullanıyorsan bu çok acı
           pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
           diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
@@ -27,15 +27,15 @@ export default function Order() {
         <div className="size">
           <h2>Boyut Seç</h2>
           <Form>
-            <FormGroup check className="gray">
+            <FormGroup check className="gray radio-margin">
               <Input name="radio-size" type="radio"></Input>
               <Label check>Küçük</Label>
             </FormGroup>
-            <FormGroup check className="gray">
+            <FormGroup check className="gray radio-margin">
               <Input name="radio-size" type="radio" />
               <Label check>Orta</Label>
             </FormGroup>
-            <FormGroup check className="gray">
+            <FormGroup check className="gray p-margin">
               <Input name="radio-size" type="radio" />
               <Label check>Büyük</Label>
             </FormGroup>
@@ -53,12 +53,79 @@ export default function Order() {
                 type="select"
                 className="select"
               >
-                <option>Normal</option>
-                <option>Ince</option>
-                <option>Kalın</option>
+                <option value="" disabled selected>
+                  Hamur Kalınlığı
+                </option>
+                <option value="normal">Normal</option>
+                <option value="ince">Ince</option>
+                <option value="kalin">Kalın</option>
               </Input>
             </Col>
           </FormGroup>
+        </div>
+      </div>
+      <div className="options-row2">
+        <div className="extras">
+          <h2>Ek Malzemeler</h2>
+          <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <Form className="form-2">
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Pepperoni</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Sosis</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Kanada Jambonu</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Tavuk Izgara</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Soğan</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Domates</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Mısır</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Sucuk</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Jalepeno</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Sarımsak</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Biber</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Salam</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Ananas</Label>
+            </FormGroup>
+            <FormGroup className="checkbox" check inline>
+              <Input type="checkbox" />
+              <Label check>Kabak</Label>
+            </FormGroup>
+          </Form>
         </div>
       </div>
     </main>
