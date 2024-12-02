@@ -53,8 +53,9 @@ export default function Card(props) {
         </div>
         <Button
           className="order-button"
-          onClick={onSubmit}
+          onSubmit={onSubmit}
           disabled={!disabled}
+          type="submit"
         >
           SİPARİŞ VER
         </Button>
