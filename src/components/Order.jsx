@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import ExtraItem from "./OrderItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Card from "./Card";
 
 const initialForm = {
   fullName: "",
@@ -14,6 +15,7 @@ const initialForm = {
 const errorMessages = {
   fullName: "Please enter your full name with at least 3 letters.",
   extras: "Please enter minimum 4 extras, maximum 10 extras.",
+  size: "Please choose a pizza's size.",
 };
 
 const validateName = (fullName) => {
@@ -24,30 +26,34 @@ const validateExtras = (extras) => {
   return extras.length >= 4 && extras.length <= 10 ? true : false;
 };
 
+const validateSize = (size) => size !== "";
+
 export default function Order() {
   document.body.className = "order-body";
 
   const [form, setForm] = useState(initialForm);
   const [isValid, setIsValid] = useState(false);
   const [errors, setErrors] = useState(errorMessages);
+
   const history = useHistory();
 
   useEffect(() => {
     const nameError = validateName(form.fullName) ? "" : errorMessages.fullName;
     const extrasError = validateExtras(form.extras) ? "" : errorMessages.extras;
+    const sizeError = validateSize(form.size) ? "" : errorMessages.size;
 
     setErrors({
       fullName: nameError,
       extras: extrasError,
+      size: sizeError,
     });
 
-    console.log(form.extras);
+    const formIsValid =
+      validateName(form.fullName) &&
+      validateExtras(form.extras) &&
+      validateSize(form.size);
 
-    if (validateName(form.fullName) && validateExtras(form.extras)) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    setIsValid(formIsValid);
   }, [form]);
 
   function handleChange(event) {
@@ -56,8 +62,8 @@ export default function Order() {
       setForm({
         ...form,
         extras: checked
-          ? [...form.extras, name] // Seçiliyse ekle
-          : form.extras.filter((extra) => extra !== name), // Seçili değilse çıkar
+          ? [...form.extras, name]
+          : form.extras.filter((extra) => extra !== name),
       });
     } else {
       setForm({
@@ -65,6 +71,10 @@ export default function Order() {
         [name]: value,
       });
     }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
   }
 
   return (
@@ -92,17 +102,35 @@ export default function Order() {
           <h2>Boyut Seç</h2>
           <Form>
             <FormGroup check className="gray radio-margin">
-              <Input name="radio-size" type="radio"></Input>
+              <Input
+                onChange={handleChange}
+                name="size"
+                type="radio"
+                value="kucuk"
+              />
               <Label check>Küçük</Label>
             </FormGroup>
             <FormGroup check className="gray radio-margin">
-              <Input name="radio-size" type="radio" />
+              <Input
+                onChange={handleChange}
+                name="size"
+                type="radio"
+                value="kucuk"
+              />
               <Label check>Orta</Label>
             </FormGroup>
             <FormGroup check className="gray p-margin">
-              <Input name="radio-size" type="radio" />
+              <Input
+                onChange={handleChange}
+                name="size"
+                type="radio"
+                value="kucuk"
+              />
               <Label check>Büyük</Label>
             </FormGroup>
+            <div className="red">
+              {errors.size && <FormFeedback>{errors.size}</FormFeedback>}
+            </div>
           </Form>
         </div>
         <div className="pastry">
@@ -206,6 +234,8 @@ export default function Order() {
           ></Input>
         </FormGroup>
       </div>
+
+      <Card onClick={handleSubmit} disabled={isValid} extras={form.extras} />
     </main>
   );
 }

@@ -15,7 +15,6 @@ function App() {
         <Route exact path="/order">
           <Header />
           <Order />
-          <Card />
         </Route>
         <Route exact path="/success">
           <Success />

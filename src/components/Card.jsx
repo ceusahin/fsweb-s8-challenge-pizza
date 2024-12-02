@@ -1,21 +1,20 @@
 import { Button } from "reactstrap";
 import "../styles/card.css";
 import { useState } from "react";
-import form from "./Order";
 
-export default function Card() {
+export default function Card(props) {
   document.body.className = "card-body";
+  const { onSubmit, disabled, extras } = props;
 
   const [quantity, setQuantity] = useState(1);
   const pricePerItem = 85.5;
-  const total = pricePerItem * quantity;
+  const extraPrice = 5;
+  const total = pricePerItem * quantity + extras.length * 5;
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
-
-  function handleSubmit() {}
 
   return (
     <div className="card">
@@ -44,7 +43,7 @@ export default function Card() {
           <div className="summary-row">
             <span className="extras-gains">Seçimler</span>
             <span className="extras-gains">
-              {(form.extras * 5).toFixed(2)}₺
+              {(extras.length * extraPrice).toFixed(2)}₺
             </span>
           </div>
           <div className="summary-row total">
@@ -52,7 +51,11 @@ export default function Card() {
             <span className="extras-red">{total.toFixed(2)}₺</span>
           </div>
         </div>
-        <Button className="order-button" onSubmit={handleSubmit}>
+        <Button
+          className="order-button"
+          onClick={onSubmit}
+          disabled={!disabled}
+        >
           SİPARİŞ VER
         </Button>
       </div>
