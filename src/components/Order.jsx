@@ -2,8 +2,13 @@ import "../styles/order.css";
 import React from "react";
 import { Col, Form, FormGroup, Label, Input } from "reactstrap";
 import ExtraItem from "./OrderItem";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Order() {
+  document.body.className = "order-body";
+
+  const history = useHistory();
+
   return (
     <main>
       <h2 className="main-title">Position Absolute Acı Pizza</h2>

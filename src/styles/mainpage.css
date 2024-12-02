@@ -1,0 +1,43 @@
+.homepage-body {
+  background: url("../../Assets/Iteration-1-assets/home-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.main-logo {
+  display: block;
+  margin: 5rem auto;
+}
+
+.main-h2 {
+  display: flex;
+  color: white;
+  font-size: 4.5rem;
+  font-weight: lighter;
+  justify-content: center;
+  font-family: "Roboto Condensed", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  scale: 1.2;
+  margin-top: -2rem;
+}
+
+.button-aciktim {
+  display: block;
+  background-color: #fdc913;
+  color: #292929;
+  padding: 0.75rem 3rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin: 4.5rem auto;
+  border-radius: 1.5rem;
+  border-style: none;
+  scale: 1.4;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Barlow", serif;
+  font-weight: 700;
+  font-style: normal;
+  cursor: pointer;
+}

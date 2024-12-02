@@ -1,6 +1,8 @@
 import "../styles/header.css";
 
 export default function Header() {
+  document.body.className = "header-body";
+
   return (
     <header className="header">
       <div className="header-container">
@@ -12,7 +14,7 @@ export default function Header() {
             Anasayfa
           </a>
           <span className="separator">-</span>
-          <a href="/" className="nav-link">
+          <a href="/order" className="nav-link">
             Sipariş Oluştur
           </a>
         </nav>

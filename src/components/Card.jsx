@@ -1,7 +1,10 @@
+import { Button } from "reactstrap";
 import "../styles/card.css";
 import { useState } from "react";
 
 export default function Card() {
+  document.body.className = "card-body";
+
   const [quantity, setQuantity] = useState(1);
   const pricePerItem = 1;
   const total = pricePerItem * quantity;
@@ -15,13 +18,21 @@ export default function Card() {
     <div className="card">
       <div className="space"></div>
       <div className="quantity-section">
-        <button className="quantity-button-left" onClick={handleDecrease}>
+        <Button
+          type="button"
+          className="quantity-button-left"
+          onClick={handleDecrease}
+        >
           -
-        </button>
+        </Button>
         <div className="quantity">{quantity}</div>
-        <button className="quantity-button-right" onClick={handleIncrease}>
+        <Button
+          type="button"
+          className="quantity-button-right"
+          onClick={handleIncrease}
+        >
           +
-        </button>
+        </Button>
       </div>
 
       <div className="order-summary">
