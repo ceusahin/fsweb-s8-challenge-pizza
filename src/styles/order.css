@@ -95,3 +95,9 @@ textarea {
 .radio-margin {
   margin-bottom: 1rem;
 }
+
+.red {
+  color: #ce2829;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}

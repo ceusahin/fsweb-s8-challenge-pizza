@@ -1,13 +1,71 @@
 import "../styles/order.css";
-import React from "react";
-import { Col, Form, FormGroup, Label, Input } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import ExtraItem from "./OrderItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+const initialForm = {
+  fullName: "",
+  size: "",
+  extras: [],
+  note: "",
+};
+
+const errorMessages = {
+  fullName: "Please enter your full name with at least 3 letters.",
+  extras: "Please enter minimum 4 extras, maximum 10 extras.",
+};
+
+const validateName = (fullName) => {
+  return fullName.length >= 3 ? true : false;
+};
+
+const validateExtras = (extras) => {
+  return extras.length >= 4 && extras.length <= 10 ? true : false;
+};
 
 export default function Order() {
   document.body.className = "order-body";
 
+  const [form, setForm] = useState(initialForm);
+  const [isValid, setIsValid] = useState(false);
+  const [errors, setErrors] = useState(errorMessages);
   const history = useHistory();
+
+  useEffect(() => {
+    const nameError = validateName(form.fullName) ? "" : errorMessages.fullName;
+    const extrasError = validateExtras(form.extras) ? "" : errorMessages.extras;
+
+    setErrors({
+      fullName: nameError,
+      extras: extrasError,
+    });
+
+    console.log(form.extras);
+
+    if (validateName(form.fullName) && validateExtras(form.extras)) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [form]);
+
+  function handleChange(event) {
+    let { name, value, type, checked } = event.target;
+    if (type === "checkbox") {
+      setForm({
+        ...form,
+        extras: checked
+          ? [...form.extras, name] // Seçiliyse ekle
+          : form.extras.filter((extra) => extra !== name), // Seçili değilse çıkar
+      });
+    } else {
+      setForm({
+        ...form,
+        [name]: value,
+      });
+    }
+  }
 
   return (
     <main>
@@ -75,21 +133,44 @@ export default function Order() {
           <h2>Ek Malzemeler</h2>
           <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
           <Form className="form-2">
-            <ExtraItem name="pepperoni" label="Pepperoni" />
-            <ExtraItem name="sosis" label="Sosis" />
-            <ExtraItem name="kanada-jambonu" label="Kanada Jambonu" />
-            <ExtraItem name="tavuk-izgara" label="Tavuk Izgara" />
-            <ExtraItem name="sogan" label="Soğan" />
-            <ExtraItem name="domates" label="Domates" />
-            <ExtraItem name="misir" label="Mısır" />
-            <ExtraItem name="sucuk" label="Sucuk" />
-            <ExtraItem name="jalepeno" label="Jalepeno" />
-            <ExtraItem name="sarimsak" label="Sarımsak" />
-            <ExtraItem name="biber" label="Biber" />
-            <ExtraItem name="salam" label="Salam" />
-            <ExtraItem name="ananas" label="Ananas" />
-            <ExtraItem name="kabak" label="Kabak" />
+            <ExtraItem
+              onChange={handleChange}
+              name="pepperoni"
+              label="Pepperoni"
+            />
+            <ExtraItem onChange={handleChange} name="sosis" label="Sosis" />
+            <ExtraItem
+              onChange={handleChange}
+              name="kanada-jambonu"
+              label="Kanada Jambonu"
+            />
+            <ExtraItem
+              onChange={handleChange}
+              name="tavuk-izgara"
+              label="Tavuk Izgara"
+            />
+            <ExtraItem onChange={handleChange} name="sogan" label="Soğan" />
+            <ExtraItem onChange={handleChange} name="domates" label="Domates" />
+            <ExtraItem onChange={handleChange} name="misir" label="Mısır" />
+            <ExtraItem onChange={handleChange} name="sucuk" label="Sucuk" />
+            <ExtraItem
+              onChange={handleChange}
+              name="jalepeno"
+              label="Jalepeno"
+            />
+            <ExtraItem
+              onChange={handleChange}
+              name="sarimsak"
+              label="Sarımsak"
+            />
+            <ExtraItem onChange={handleChange} name="biber" label="Biber" />
+            <ExtraItem onChange={handleChange} name="salam" label="Salam" />
+            <ExtraItem onChange={handleChange} name="ananas" label="Ananas" />
+            <ExtraItem onChange={handleChange} name="kabak" label="Kabak" />
           </Form>
+          <div className="red">
+            {errors.extras && <FormFeedback>{errors.extras}</FormFeedback>}
+          </div>
         </div>
       </div>
       <div className="fullName">
@@ -99,9 +180,16 @@ export default function Order() {
           <Input
             type="textarea"
             id="text"
+            name="fullName"
             placeholder="Ad soyad giriniz.."
             className="inputName"
+            onChange={handleChange}
+            value={form.fullName}
+            invalid={!!errors.fullName}
           ></Input>
+          <div className="red">
+            {errors.fullName && <FormFeedback>{errors.fullName}</FormFeedback>}
+          </div>
         </FormGroup>
       </div>
       <div className="orderNote">
@@ -111,6 +199,8 @@ export default function Order() {
           <Input
             type="textarea"
             id="orderNote"
+            name="note"
+            onChange={handleChange}
             placeholder="Sipariş notunuzu giriniz.."
             className="orderNote"
           ></Input>
