@@ -79,10 +79,13 @@ export default function Order() {
     event.preventDefault();
     // console.log(form);
 
-    axios.post("https://reqres.in/api/pizza", form).then((res) => {
-      console.log(res.data);
-      history.push("/success");
-    });
+    axios
+      .post("https://reqres.in/api/pizza", form)
+      .then((res) => {
+        console.log(res.data);
+        history.push("/success");
+      })
+      .catch((err) => {});
   }
 
   return (

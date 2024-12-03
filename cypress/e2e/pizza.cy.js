@@ -2,7 +2,7 @@ describe("tests", () => {
   it("success test", () => {
     cy.visit("http://localhost:5173/order");
 
-    cy.get('[data-cy="error-size"]').check("orta");
+    cy.get('[data-cy="error-size"]').check("orta").should("be.checked");
 
     cy.get('[data-cy="error-extra-item-pepperoni"]')
       .check()
@@ -31,6 +31,7 @@ describe("tests", () => {
     cy.get('[data-cy="error-fullName"]')
       .type("Hakan Sahin")
       .should("not.be.empty");
+
     cy.get('[data-cy="error-note"]')
       .type("bol sosisli olsun")
       .should("not.be.empty");
