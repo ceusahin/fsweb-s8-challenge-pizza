@@ -110,31 +110,43 @@ export default function Order() {
           <div className="size">
             <h2>Boyut Seç</h2>
             <FormGroup check className="gray radio-margin">
-              <Input
-                onChange={handleChange}
-                name="size"
-                type="radio"
-                value="kucuk"
-              />
-              <Label check>Küçük</Label>
+              <Label check>
+                {" "}
+                <Input
+                  data-cy="error-size"
+                  onChange={handleChange}
+                  name="size"
+                  type="radio"
+                  value="kucuk"
+                />
+                Küçük
+              </Label>
             </FormGroup>
             <FormGroup check className="gray radio-margin">
-              <Input
-                onChange={handleChange}
-                name="size"
-                type="radio"
-                value="orta"
-              />
-              <Label check>Orta</Label>
+              <Label check>
+                {" "}
+                <Input
+                  data-cy="error-size"
+                  onChange={handleChange}
+                  name="size"
+                  type="radio"
+                  value="orta"
+                />
+                Orta
+              </Label>
             </FormGroup>
             <FormGroup check className="gray p-margin">
-              <Input
-                onChange={handleChange}
-                name="size"
-                type="radio"
-                value="buyuk"
-              />
-              <Label check>Büyük</Label>
+              <Label check>
+                {" "}
+                <Input
+                  data-cy="error-size"
+                  onChange={handleChange}
+                  name="size"
+                  type="radio"
+                  value="buyuk"
+                />
+                Büyük
+              </Label>
             </FormGroup>
             <div className="red">
               {errors.size && <FormFeedback>{errors.size}</FormFeedback>}
@@ -175,20 +187,28 @@ export default function Order() {
             <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
             <Form className="form-2">
               <ExtraItem
+                errorextra="error-extra-item-pepperoni"
                 onChange={handleChange}
                 name="pepperoni"
                 label="Pepperoni"
               />
-              <ExtraItem onChange={handleChange} name="sosis" label="Sosis" />
+              <ExtraItem
+                errorextra="error-extra-item-sosis"
+                onChange={handleChange}
+                name="sosis"
+                label="Sosis"
+              />
               <ExtraItem
                 onChange={handleChange}
                 name="kanada-jambonu"
                 label="Kanada Jambonu"
+                errorextra="error-extra-item-kanada-jambonu"
               />
               <ExtraItem
                 onChange={handleChange}
                 name="tavuk-izgara"
                 label="Tavuk Izgara"
+                errorextra="error-extra-item-tavuk-izgara"
               />
               <ExtraItem onChange={handleChange} name="sogan" label="Soğan" />
               <ExtraItem
@@ -231,6 +251,7 @@ export default function Order() {
               onChange={handleChange}
               value={form.fullName}
               invalid={!!errors.fullName}
+              data-cy="error-fullName"
             ></Input>
             <div className="red">
               {errors.fullName && (
@@ -250,6 +271,8 @@ export default function Order() {
               onChange={handleChange}
               placeholder="Sipariş notunuzu giriniz.."
               className="orderNote"
+              value={form.note}
+              data-cy="error-note"
             ></Input>
           </FormGroup>
         </div>
