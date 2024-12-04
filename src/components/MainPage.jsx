@@ -21,10 +21,10 @@ export default function MainPage() {
           className="main-logo"
         />
         <h2 className="main-h2">
-          <span>KOD</span> <span> ACIKTIRIR</span>
+          <span>KOD</span> <span className="qw"> ACIKTIRIR</span>
         </h2>
         <h2 className="main-h2">
-          <span>PİZZA, </span> <span>DOYURUR</span>
+          <span>PİZZA, </span> <span className="qw">DOYURUR</span>
         </h2>
         <Button type="button" className="button-aciktim" onClick={aciktim}>
           ACIKTIM
