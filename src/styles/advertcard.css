@@ -1,0 +1,146 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  padding-top: 3rem;
+}
+
+.card-left {
+  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.47rem;
+  margin-right: 0.75rem;
+  width: 25rem;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+  line-height: 1rem;
+}
+
+.card-left h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+.card-right {
+  margin-top: -1.2rem;
+}
+
+.card-right h2 {
+  font-weight: bold;
+
+  padding-top: 1.5rem;
+  line-height: rem;
+  padding-left: 1rem;
+}
+
+.card-right button {
+  margin-left: 1rem;
+}
+
+.card-right span {
+  color: red;
+}
+
+.card-right-1 {
+  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.47rem;
+  margin-bottom: 0.75rem;
+  width: 26.2rem;
+  height: 10rem;
+}
+
+.card-right-2 {
+  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.47rem;
+  width: 26.2rem;
+  height: 10rem;
+  color: black;
+}
+
+.advert-button {
+  color: #ce2829;
+  background-color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+}
+
+.advert-headers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.heading-1 span {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ce2829;
+  font-size: 2rem;
+}
+
+.advert-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.advert-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 3rem;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 2rem;
+  border-color: white;
+  padding: 0.45rem 1rem;
+}
+
+.advert-menu-item span {
+  padding-left: 1rem;
+}
+
+.pizza-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.pizza-card-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
+  border-color: white;
+  background-color: white;
+  margin-right: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.pizza-card-item img {
+  padding: 1rem;
+}
+
+.price-ratings-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.price-2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}

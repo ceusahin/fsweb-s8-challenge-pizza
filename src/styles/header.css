@@ -1,9 +1,9 @@
-.header {
+.header-container {
   background-color: #e50914; /* Kırmızı arka plan */
   color: white;
   padding: 10px 20px;
   margin: -10px;
-  height: 10rem;
+  height: 8rem;
 }
 
 .header-title {
@@ -17,24 +17,7 @@
   font-weight: 800;
 }
 
-.header-nav {
-  text-align: center;
-  margin-top: 1.87rem;
-  margin-right: 20.9rem;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.nav-link:hover {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.separator {
+/* .separator {
   color: white;
   margin: 0 5px;
-}
+} */

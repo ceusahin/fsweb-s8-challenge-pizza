@@ -90,12 +90,28 @@ export default function Order() {
 
   return (
     <main>
-      <h2 className="main-title">Position Absolute Acı Pizza</h2>
-      <div className="price-ratings">
-        <p className="price">85.50₺</p>
-        <div className="user-ratings  ">
-          <p className="rating1">4.9</p>
-          <p className="rating2">(200)</p>
+      <div className="bg-bej">
+        <img
+          className="banner-img"
+          src="../../Assets/Iteration-2-aseets/pictures/form-banner.png"
+          alt=""
+        />
+        <nav className="header-nav">
+          <a href="/" className="nav-link">
+            Anasayfa
+          </a>
+          <span className="separator">-</span>
+          <a href="/order" className="nav-link">
+            Sipariş Oluştur
+          </a>
+        </nav>
+        <h2 className="main-title">Position Absolute Acı Pizza</h2>
+        <div className="price-ratings">
+          <p className="price">85.50₺</p>
+          <div className="user-ratings  ">
+            <p className="rating1">4.9</p>
+            <p className="rating2">(200)</p>
+          </div>
         </div>
       </div>
       <div className="explanation">

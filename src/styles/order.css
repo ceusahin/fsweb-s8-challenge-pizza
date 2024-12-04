@@ -101,3 +101,33 @@ textarea {
   text-align: center;
   margin-bottom: 2.5rem;
 }
+
+.header-nav {
+  /* border: 1px solid black; */
+  display: inline-block;
+  width: 100%;
+  margin-top: 18rem;
+}
+
+.nav-link {
+  color: #5f5f5f;
+  text-decoration: none;
+  margin: 0;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ce2829;
+}
+
+.banner-img {
+  position: absolute;
+  height: 16rem;
+  z-index: -1;
+}
+
+.separator {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
