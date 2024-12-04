@@ -1,25 +1,92 @@
-.success-body {
-  background-color: #ce2829;
+.success-main {
+  background-color: red;
+  padding-bottom: 18rem;
 }
 
 .success-logo {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block;
+  margin: auto;
+  padding-top: 3rem;
 }
 
 .success-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: inline-block;
+  margin-left: 41.5rem;
+  padding-top: 2.5rem;
   text-align: center;
+  line-height: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.success-text h2 {
   font-family: "Roboto Condensed", serif;
   font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: italic;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 6rem;
   color: white;
-  font-size: 3rem;
-  line-height: 1rem;
+  margin-bottom: 5.5rem;
+}
+
+.success-text h3 {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #fdc913;
+}
+
+.order-recap {
+  /* text-align: center; */
+  color: white;
+  margin-left: 63rem;
+  margin-top: 4.5rem;
+  scale: 1.4;
+}
+
+.order-recap ul li {
+  list-style-type: none;
+  line-height: 1.6rem;
+}
+
+.recap-price {
+  border: 1px solid white;
+  display: block;
+  margin-top: 4.88rem;
+  margin-left: 48rem;
+  margin-right: 48rem;
+  /* text-align: center; */
+  color: white;
+  border-radius: 0.47rem;
+  line-height: 0.1rem;
+}
+
+.secimler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.recap-price p {
+  display: inline-block;
+  font-size: 1.3rem;
+  /* border: 1px solid black; */
+}
+
+.toplam-text {
+  margin-left: 3rem;
+  margin-bottom: 2.4rem;
+  margin-top: 3rem;
+  font-weight: bold;
+}
+
+.toplam {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }

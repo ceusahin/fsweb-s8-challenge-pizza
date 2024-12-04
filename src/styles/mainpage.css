@@ -1,8 +1,9 @@
-.homepage-body {
+.main-page-section {
   background: url("../../Assets/Iteration-1-assets/home-banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
+  padding: 20rem;
 }
 
 .main-logo {

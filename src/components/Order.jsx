@@ -1,7 +1,7 @@
 import "../styles/order.css";
 import React, { useEffect, useState } from "react";
 import { Col, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
-import ExtraItem from "./OrderItem";
+import ExtraItem from "./ExtraItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Card from "./Card";
 import axios from "axios";

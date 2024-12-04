@@ -1,2 +1,12 @@
 #root {
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-weight: 200;
+}
