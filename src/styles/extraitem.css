@@ -1,0 +1,37 @@
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  background-color: #f5eddf;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.checkbox-label {
+  margin-right: 0.66rem;
+}
+input[type="checkbox"]::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 20 px;
+  content: "\f00c";
+  color: #292929;
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fdc913;
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}

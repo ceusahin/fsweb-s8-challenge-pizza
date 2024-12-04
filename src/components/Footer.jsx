@@ -45,9 +45,7 @@ export default function Footer() {
         <div className="pizza-list">
           <h2>Hot Menu</h2>
           <ul className="pizza-list-ul">
-            <li>
-              <a href="/order">Terminal Pizza</a>
-            </li>
+            <li>Terminal Pizza</li>
             <li>5 Kişilik Hackathlon Pizza</li>
             <li>useEffect Tavuklu Pizza</li>
             <li>Beyaz Console Frosty</li>

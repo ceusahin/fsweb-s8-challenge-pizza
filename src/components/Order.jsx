@@ -105,7 +105,7 @@ export default function Order() {
             Sipariş Oluştur
           </a>
         </nav>
-        <h2 className="main-title">Position Absolute Acı Pizza</h2>
+        <h2 className="main-title bold">Position Absolute Acı Pizza</h2>
         <div className="price-ratings">
           <p className="price">85.50₺</p>
           <div className="user-ratings  ">
@@ -127,46 +127,51 @@ export default function Order() {
       <Form onSubmit={handleSubmit}>
         <div className="options-row1">
           <div className="size">
-            <h2>Boyut Seç</h2>
-            <FormGroup check className="gray radio-margin">
-              <Label check>
-                {" "}
+            <h2 className="bold">Boyut Seç</h2>
+            <div className="size-flex">
+              <FormGroup check className="radio-spec-button gray radio-margin">
                 <Input
+                  className="radio-spec-input"
                   data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
                   value="kucuk"
+                  id="radio-s"
                 />
-                Küçük
-              </Label>
-            </FormGroup>
-            <FormGroup check className="gray radio-margin">
-              <Label check>
-                {" "}
+                <Label for="radio-s" check className="radio-spec-label">
+                  S
+                </Label>
+              </FormGroup>
+              <FormGroup check className="radio-spec-button gray radio-margin">
                 <Input
+                  className="radio-spec-input"
                   data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
+                  id="radio-m"
                   value="orta"
                 />
-                Orta
-              </Label>
-            </FormGroup>
-            <FormGroup check className="gray p-margin">
-              <Label check>
-                {" "}
+                <Label for="radio-m" check className="radio-spec-label">
+                  M
+                </Label>
+              </FormGroup>
+              <FormGroup check className="radio-spec-button gray p-margin">
                 <Input
+                  className="radio-spec-input"
                   data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
                   value="buyuk"
+                  id="radio-b"
                 />
-                Büyük
-              </Label>
-            </FormGroup>
+                <Label for="radio-b" check className="radio-spec-label">
+                  L
+                </Label>
+              </FormGroup>
+            </div>
             <div className="red">
               {errors.size && <FormFeedback>{errors.size}</FormFeedback>}
             </div>
@@ -174,7 +179,7 @@ export default function Order() {
           <div className="pastry">
             <FormGroup row>
               <Label for="select-pastry" sm={2}>
-                <h2>Hamur Seç</h2>
+                <h2 className="bold">Hamur Seç</h2>
               </Label>
               <Col sm={10}>
                 <Input
@@ -185,7 +190,7 @@ export default function Order() {
                   onChange={handleChange}
                 >
                   <option value="empty" disabled selected>
-                    Hamur Kalınlığı
+                    -Hamur Kalınlığı-
                   </option>
                   <option value="normal">Normal</option>
                   <option value="ince">Ince</option>
@@ -202,7 +207,7 @@ export default function Order() {
         </div>
         <div className="options-row2">
           <div className="extras">
-            <h2>Ek Malzemeler</h2>
+            <h2 className="bold">Ek Malzemeler</h2>
             <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
             <Form className="form-2">
               <ExtraItem
@@ -258,7 +263,7 @@ export default function Order() {
           </div>
         </div>
         <div className="fullName">
-          <h2>Ad Soyad</h2>
+          <h2 className="bold">Ad Soyad</h2>
           <FormGroup>
             <Label for="text"></Label>
             <Input
@@ -280,7 +285,7 @@ export default function Order() {
           </FormGroup>
         </div>
         <div className="orderNote">
-          <h2>Sipariş Notu</h2>
+          <h2 className="bold">Sipariş Notu</h2>
           <FormGroup>
             <Label for="orderNote"></Label>
             <Input

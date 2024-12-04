@@ -1,4 +1,5 @@
 import { FormGroup, Input, Label } from "reactstrap";
+import "../styles/extraitem.css";
 
 export default function ExtraItem(props) {
   const { name, label, onChange, errorextra } = props;
@@ -6,13 +7,18 @@ export default function ExtraItem(props) {
 
   return (
     <FormGroup className="checkbox" check inline>
-      <Input
-        data-cy={`error-extra-item-${name}`}
-        type="checkbox"
-        name={name}
-        onChange={onChange}
-      />
-      <Label check>{label}</Label>
+      <Label className="custom-checkbox" check>
+        <Input
+          className="checkbox-input"
+          data-cy={`error-extra-item-${name}`}
+          type="checkbox"
+          name={name}
+          onChange={onChange}
+        />
+
+        <span class="checkbox-label"></span>
+        {label}
+      </Label>
     </FormGroup>
   );
 }
