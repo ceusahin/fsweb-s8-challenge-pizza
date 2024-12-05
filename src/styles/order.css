@@ -6,10 +6,29 @@ main {
   margin: 0 auto;
   max-width: 33rem;
   min-width: 33rem;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .main-title {
   margin-top: 3rem;
+  font-weight: 500;
+}
+
+.size-title {
+  font-weight: 500;
+}
+
+.pastry-title {
+  font-weight: 500;
+}
+
+.extras-title {
+  font-weight: 500;
+}
+
+.extra-item-barlow {
+  font-weight: 600;
 }
 
 .price-ratings {
@@ -78,15 +97,25 @@ main {
   min-width: 93.8%;
   max-height: 1rem;
   min-height: 1rem;
+  background-color: #faf7f2;
+  margin-bottom: 0.5rem;
 }
 
 .orderNote {
+  max-width: 96.8%;
+  min-width: 96.8%;
+  max-height: 7rem;
+  min-height: 7rem;
+}
+
+.order-note {
   border-radius: 0.47rem;
   width: 100%;
   max-width: 96.8%;
   min-width: 96.8%;
   max-height: 7rem;
   min-height: 7rem;
+  background-color: #faf7f2;
 }
 
 textarea {

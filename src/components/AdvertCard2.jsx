@@ -8,7 +8,7 @@ export default function AdvertCard2() {
           <img src="../../Assets/Iteration-2-aseets/icons/1.svg" alt="" />
           <span>YENİ! Kore</span>
         </article>
-        <article className="advert-menu-item">
+        <article className="advert-menu-item bg-black">
           <img src="../../Assets/Iteration-2-aseets/icons/2.svg" alt="" />
           <span>Pizza</span>
         </article>

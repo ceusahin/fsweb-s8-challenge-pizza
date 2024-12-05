@@ -57,6 +57,9 @@
 .nav-menu-item {
   margin-left: 1rem;
   margin-right: 3rem;
+  font-family: "Barlow", serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .qw {

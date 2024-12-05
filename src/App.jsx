@@ -5,7 +5,16 @@ import MainPage from "./components/MainPage";
 import Success from "./components/Success";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { useState } from "react";
 function App() {
+  const [appForm, setAppForm] = useState({
+    fullName: "",
+    size: "",
+    pastry: "",
+    extras: [],
+    note: "",
+  });
+
   return (
     <>
       <Switch>
@@ -14,11 +23,11 @@ function App() {
         </Route>
         <Route exact path="/order">
           <Header />
-          <Order />
+          <Order setAppForm={setAppForm} />
           <Footer />
         </Route>
         <Route exact path="/success">
-          <Success />
+          <Success appForm={appForm} />
         </Route>
       </Switch>
     </>

@@ -26,7 +26,12 @@ export default function MainPage() {
         <h2 className="main-h2">
           <span>PİZZA, </span> <span className="qw">DOYURUR</span>
         </h2>
-        <Button type="button" className="button-aciktim" onClick={aciktim}>
+        <Button
+          data-cy="aciktim-button"
+          type="button"
+          className="button-aciktim"
+          onClick={aciktim}
+        >
           ACIKTIM
         </Button>
       </section>

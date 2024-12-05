@@ -19,7 +19,9 @@
 }
 
 .card-left h2 {
-  font-weight: bold;
+  font-family: "Barlow", serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 2.8rem;
 }
 
@@ -28,8 +30,9 @@
 }
 
 .card-right h2 {
-  font-weight: bold;
-
+  font-family: "Barlow", serif;
+  font-weight: 400;
+  font-style: normal;
   padding-top: 1.5rem;
   line-height: rem;
   padding-left: 1rem;
@@ -69,6 +72,9 @@
   border: none;
   padding: 0.7rem 1rem;
   border-radius: 2rem;
+  font-weight: bold;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .advert-headers {
@@ -93,6 +99,9 @@
 .advert-menu {
   display: flex;
   justify-content: center;
+  font-weight: 500;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .advert-menu-item {
@@ -115,6 +124,9 @@
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
+  font-weight: bold;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .pizza-card-item {
@@ -143,4 +155,15 @@
 .price-2 {
   font-size: 1.35rem;
   font-weight: 600;
+}
+
+.bg-black {
+  background-color: #292929;
+  color: white;
+}
+
+.advert1 {
+  font-family: "Barlow", serif;
+  font-weight: 400;
+  font-style: normal;
 }

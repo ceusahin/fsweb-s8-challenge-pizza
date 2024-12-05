@@ -9,6 +9,7 @@ import axios from "axios";
 const initialForm = {
   fullName: "",
   size: "",
+  pastry: "",
   extras: [],
   note: "",
 };
@@ -17,7 +18,6 @@ const errorMessages = {
   fullName: "Please enter your full name with at least 3 letters.",
   extras: "Please enter minimum 4 extras, maximum 10 extras.",
   size: "Please choose a pizza's size.",
-  pastry: "Please choose a pastry of pizza.",
 };
 
 const validateName = (fullName) => {
@@ -30,7 +30,7 @@ const validateExtras = (extras) => {
 
 const validateSize = (size) => size !== "";
 
-export default function Order() {
+export default function Order({ setAppForm }) {
   document.body.className = "order-body";
 
   const [form, setForm] = useState(initialForm);
@@ -82,7 +82,15 @@ export default function Order() {
     axios
       .post("https://reqres.in/api/pizza", form)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
+        setAppForm({
+          fullName: res.data.fullName,
+          size: res.data.size,
+          pastry: res.data.pastry,
+          extras: [...res.data.extras],
+          note: res.data.note,
+        });
+
         history.push("/success");
       })
       .catch((err) => {});
@@ -105,7 +113,7 @@ export default function Order() {
             Sipariş Oluştur
           </a>
         </nav>
-        <h2 className="main-title bold">Position Absolute Acı Pizza</h2>
+        <h2 className="main-title">Position Absolute Acı Pizza</h2>
         <div className="price-ratings">
           <p className="price">85.50₺</p>
           <div className="user-ratings  ">
@@ -127,31 +135,35 @@ export default function Order() {
       <Form onSubmit={handleSubmit}>
         <div className="options-row1">
           <div className="size">
-            <h2 className="bold">Boyut Seç</h2>
+            <h2 className="size-title">Boyut Seç</h2>
             <div className="size-flex">
               <FormGroup check className="radio-spec-button gray radio-margin">
                 <Input
                   className="radio-spec-input"
-                  data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
-                  value="kucuk"
+                  value="S"
                   id="radio-s"
+                  data-cy="error-size"
                 />
-                <Label for="radio-s" check className="radio-spec-label">
+                <Label
+                  data-cy="error-size-label"
+                  for="radio-s"
+                  check
+                  className="radio-spec-label"
+                >
                   S
                 </Label>
               </FormGroup>
               <FormGroup check className="radio-spec-button gray radio-margin">
                 <Input
                   className="radio-spec-input"
-                  data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
                   id="radio-m"
-                  value="orta"
+                  value="M"
                 />
                 <Label for="radio-m" check className="radio-spec-label">
                   M
@@ -160,11 +172,10 @@ export default function Order() {
               <FormGroup check className="radio-spec-button gray p-margin">
                 <Input
                   className="radio-spec-input"
-                  data-cy="error-size"
                   onChange={handleChange}
                   name="size"
                   type="radio"
-                  value="buyuk"
+                  value="L"
                   id="radio-b"
                 />
                 <Label for="radio-b" check className="radio-spec-label">
@@ -179,83 +190,84 @@ export default function Order() {
           <div className="pastry">
             <FormGroup row>
               <Label for="select-pastry" sm={2}>
-                <h2 className="bold">Hamur Seç</h2>
+                <h2 className="pastry-title">Hamur Seç</h2>
               </Label>
               <Col sm={10}>
                 <Input
                   id="select-pastry"
                   name="pastry"
                   type="select"
-                  className="select"
+                  className="select gray"
                   onChange={handleChange}
+                  data-cy="error-select"
                 >
                   <option value="empty" disabled selected>
                     -Hamur Kalınlığı-
                   </option>
-                  <option value="normal">Normal</option>
-                  <option value="ince">Ince</option>
-                  <option value="kalin">Kalın</option>
+                  <option data-cy="error-select-option1" value="Normal">
+                    Normal
+                  </option>
+                  <option value="Ince">Ince</option>
+                  <option value="Kalın">Kalın</option>
                 </Input>
-                <div className="red">
-                  {errors.pastry && (
-                    <FormFeedback>{errors.pastry}</FormFeedback>
-                  )}
-                </div>
+                <div className="red"></div>
               </Col>
             </FormGroup>
           </div>
         </div>
         <div className="options-row2">
           <div className="extras">
-            <h2 className="bold">Ek Malzemeler</h2>
-            <p className="p-margin">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
-            <Form className="form-2">
+            <h2 className="extras-title">Ek Malzemeler</h2>
+            <p className="p-margin gray">
+              En fazla 10 malzeme seçebilirsiniz. 5₺
+            </p>
+            <Form className="form-2 gray extra-item-barlow">
               <ExtraItem
                 errorextra="error-extra-item-pepperoni"
                 onChange={handleChange}
-                name="pepperoni"
+                name="Pepperoni"
                 label="Pepperoni"
               />
               <ExtraItem
                 errorextra="error-extra-item-sosis"
                 onChange={handleChange}
-                name="sosis"
+                name="Sosis"
                 label="Sosis"
               />
               <ExtraItem
                 onChange={handleChange}
-                name="kanada-jambonu"
+                name="Kanada Jambonu"
                 label="Kanada Jambonu"
                 errorextra="error-extra-item-kanada-jambonu"
               />
               <ExtraItem
                 onChange={handleChange}
-                name="tavuk-izgara"
+                name="Tavuk Izgara"
                 label="Tavuk Izgara"
                 errorextra="error-extra-item-tavuk-izgara"
               />
-              <ExtraItem onChange={handleChange} name="sogan" label="Soğan" />
+              <ExtraItem onChange={handleChange} name="Soğan" label="Soğan" />
               <ExtraItem
                 onChange={handleChange}
-                name="domates"
+                name="Domates"
                 label="Domates"
               />
-              <ExtraItem onChange={handleChange} name="misir" label="Mısır" />
-              <ExtraItem onChange={handleChange} name="sucuk" label="Sucuk" />
+              <ExtraItem onChange={handleChange} name="Mısır" label="Mısır" />
+              <ExtraItem onChange={handleChange} name="Sucuk" label="Sucuk" />
               <ExtraItem
                 onChange={handleChange}
-                name="jalepeno"
+                name="Jalepeno"
                 label="Jalepeno"
               />
               <ExtraItem
                 onChange={handleChange}
-                name="sarimsak"
+                name="Sarımsak"
                 label="Sarımsak"
               />
-              <ExtraItem onChange={handleChange} name="biber" label="Biber" />
-              <ExtraItem onChange={handleChange} name="salam" label="Salam" />
-              <ExtraItem onChange={handleChange} name="ananas" label="Ananas" />
-              <ExtraItem onChange={handleChange} name="kabak" label="Kabak" />
+              <ExtraItem onChange={handleChange} name="Biber" label="Biber" />
+              <ExtraItem onChange={handleChange} name="Salam" label="Salam" />
+              <ExtraItem onChange={handleChange} name="Ananas" label="Ananas" />
+              <ExtraItem onChange={handleChange} name="Kabak" label="Kabak" />
             </Form>
             <div className="red">
               {errors.extras && <FormFeedback>{errors.extras}</FormFeedback>}
@@ -263,7 +275,7 @@ export default function Order() {
           </div>
         </div>
         <div className="fullName">
-          <h2 className="bold">Ad Soyad</h2>
+          <h2 className="size-title">Ad Soyad</h2>
           <FormGroup>
             <Label for="text"></Label>
             <Input
@@ -285,7 +297,7 @@ export default function Order() {
           </FormGroup>
         </div>
         <div className="orderNote">
-          <h2 className="bold">Sipariş Notu</h2>
+          <h2 className="size-title">Sipariş Notu</h2>
           <FormGroup>
             <Label for="orderNote"></Label>
             <Input
@@ -294,7 +306,7 @@ export default function Order() {
               name="note"
               onChange={handleChange}
               placeholder="Sipariş notunuzu giriniz.."
-              className="orderNote"
+              className="order-note"
               value={form.note}
               data-cy="error-note"
             ></Input>

@@ -42,6 +42,9 @@
   margin-left: 63rem;
   margin-top: 4.5rem;
   scale: 1.4;
+  font-weight: 300;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .order-recap ul li {
@@ -53,12 +56,15 @@
   border: 1px solid white;
   display: block;
   margin-top: 4.88rem;
-  margin-left: 48rem;
-  margin-right: 48rem;
-  /* text-align: center; */
+  margin-left: 44rem;
+  margin-right: 44rem;
   color: white;
   border-radius: 0.47rem;
   line-height: 0.1rem;
+  width: 30rem;
+  font-weight: 400;
+  font-family: "Barlow", serif;
+  font-style: normal;
 }
 
 .secimler {
@@ -89,4 +95,17 @@
   margin-bottom: 2.4rem;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.main-p-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.dynamic-bold {
+  font-weight: 600;
+}
+
+.recap-details {
+  width: 15rem;
 }

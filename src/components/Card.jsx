@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Card(props) {
   document.body.className = "card-body";
   const { onSubmit, disabled, extras } = props;
+  // console.log(extras);
 
   const [quantity, setQuantity] = useState(1);
   const pricePerItem = 85.5;
