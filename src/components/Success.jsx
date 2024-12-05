@@ -62,11 +62,11 @@ export default function Success(props) {
           <div className="recap-order">
             <div className="secimler">
               <p>Seçimler</p>
-              <p>{(extraPrice * appForm.extras.length).toFixed(2)}</p>
+              <p>{(extraPrice * appForm.extras.length).toFixed(2) + " "}₺</p>
             </div>
             <div className="toplam">
               <p>Toplam</p>
-              <p>{(total * appQuantity).toFixed(2)}</p>
+              <p>{(total * appQuantity).toFixed(2) + " "}₺</p>
             </div>
             <div className="adet">
               <p>Adet</p>
