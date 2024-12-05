@@ -30,8 +30,10 @@ const validateExtras = (extras) => {
 
 const validateSize = (size) => size !== "";
 
-export default function Order({ setAppForm }) {
+export default function Order(props) {
   document.body.className = "order-body";
+
+  const { setAppForm, setAppQuantity } = props;
 
   const [form, setForm] = useState(initialForm);
   const [isValid, setIsValid] = useState(false);
@@ -313,7 +315,11 @@ export default function Order({ setAppForm }) {
           </FormGroup>
         </div>
 
-        <Card disabled={isValid} extras={form.extras} />
+        <Card
+          disabled={isValid}
+          extras={form.extras}
+          setAppQuantity={setAppQuantity}
+        />
       </Form>
     </main>
   );

@@ -4,18 +4,20 @@ import { useState } from "react";
 
 export default function Card(props) {
   document.body.className = "card-body";
-  const { onSubmit, disabled, extras } = props;
+  const { onSubmit, disabled, extras, setAppQuantity } = props;
   // console.log(extras);
 
   const [quantity, setQuantity] = useState(1);
   const pricePerItem = 85.5;
   const extraPrice = 5;
-  const total = pricePerItem * quantity + extras.length * 5;
+  const total = (pricePerItem + extras.length * extraPrice) * quantity;
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
+
+  setAppQuantity(quantity);
 
   return (
     <div className="card">

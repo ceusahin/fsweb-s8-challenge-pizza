@@ -2,12 +2,17 @@ import "../styles/success.css";
 import Footer from "./Footer";
 import "../styles/footer.css";
 import "../styles/mainpage.css";
+import { queryAllByAltText } from "@testing-library/react";
 
 export default function Success(props) {
   document.body.className = "success-body";
 
-  const { appForm } = props;
+  const { appForm, appQuantity } = props;
   console.log(appForm);
+
+  const pricePerItem = 85.5;
+  const extraPrice = 5;
+  const total = pricePerItem + extraPrice * appForm.extras.length;
 
   let extrasStr = "";
 
@@ -57,11 +62,15 @@ export default function Success(props) {
           <div className="recap-order">
             <div className="secimler">
               <p>Seçimler</p>
-              <p>123</p>
+              <p>{(extraPrice * appForm.extras.length).toFixed(2)}</p>
             </div>
             <div className="toplam">
               <p>Toplam</p>
-              <p>123</p>
+              <p>{(total * appQuantity).toFixed(2)}</p>
+            </div>
+            <div className="adet">
+              <p>Adet</p>
+              <p>{appQuantity}</p>
             </div>
           </div>
         </div>

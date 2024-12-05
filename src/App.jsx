@@ -15,6 +15,8 @@ function App() {
     note: "",
   });
 
+  const [appQuantity, setAppQuantity] = useState(1);
+
   return (
     <>
       <Switch>
@@ -23,11 +25,11 @@ function App() {
         </Route>
         <Route exact path="/order">
           <Header />
-          <Order setAppForm={setAppForm} />
+          <Order setAppForm={setAppForm} setAppQuantity={setAppQuantity} />
           <Footer />
         </Route>
         <Route exact path="/success">
-          <Success appForm={appForm} />
+          <Success appForm={appForm} appQuantity={appQuantity} />
         </Route>
       </Switch>
     </>

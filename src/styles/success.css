@@ -97,6 +97,16 @@
   padding-right: 3rem;
 }
 
+.adet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: -2.3rem;
+  margin-bottom: 2.4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .main-p-button a {
   text-decoration: none;
   color: black;
