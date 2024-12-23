@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import "../styles/footer.css";
 import "../styles/mainpage.css";
 import { queryAllByAltText } from "@testing-library/react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Success(props) {
   document.body.className = "success-body";
@@ -13,6 +14,7 @@ export default function Success(props) {
   const pricePerItem = 85.5;
   const extraPrice = 5;
   const total = pricePerItem + extraPrice * appForm.extras.length;
+  const history = useHistory();
 
   let extrasStr = "";
 
@@ -25,6 +27,10 @@ export default function Success(props) {
 
     extrasStr = extrasStr + `,   `;
   }
+
+  const toMainPage = () => {
+    history.push("/");
+  };
 
   return (
     <>
@@ -74,8 +80,8 @@ export default function Success(props) {
             </div>
           </div>
         </div>
-        <button className="main-p-button button-aciktim">
-          <a href="/">Ana Sayfa</a>
+        <button onClick={toMainPage} className="main-p-button button-aciktim">
+          Ana Sayfa
         </button>
       </div>
       <Footer></Footer>

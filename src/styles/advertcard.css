@@ -75,6 +75,7 @@
   font-weight: bold;
   font-family: "Barlow", serif;
   font-style: normal;
+  cursor: pointer;
 }
 
 .advert-headers {
