@@ -5,6 +5,7 @@ import ExtraItem from "./ExtraItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Card from "./Card";
 import axios from "axios";
+import bannerImg from "../../Assets/Iteration-2-aseets/pictures/form-banner.png";
 
 const initialForm = {
   fullName: "",
@@ -101,11 +102,7 @@ export default function Order(props) {
   return (
     <main>
       <div className="bg-bej">
-        <img
-          className="banner-img"
-          src="../../Assets/Iteration-2-aseets/pictures/form-banner.png"
-          alt=""
-        />
+        <img className="banner-img" src={bannerImg} alt="" />
         <nav className="header-nav">
           <a href="/" className="nav-link">
             Anasayfa

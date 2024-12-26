@@ -4,6 +4,7 @@ import "../styles/footer.css";
 import "../styles/mainpage.css";
 import { queryAllByAltText } from "@testing-library/react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import logoImg from "../../Assets/Iteration-1-assets/logo.svg";
 
 export default function Success(props) {
   document.body.className = "success-body";
@@ -35,11 +36,7 @@ export default function Success(props) {
   return (
     <>
       <div className="success-main">
-        <img
-          className="success-logo"
-          src="../../Assets/Iteration-1-assets/logo.svg"
-          alt=""
-        />
+        <img className="success-logo" src={logoImg} alt="" />
         <div className="success-text">
           <h3>lezzetin yolda</h3>
           <h2>SİPARİŞ ALINDI</h2>

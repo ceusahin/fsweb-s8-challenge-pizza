@@ -1,4 +1,5 @@
 import "../styles/header.css";
+import headerImg from "../../Assets/Iteration-1-assets/logo.svg";
 
 export default function Header() {
   document.body.className = "header-body";
@@ -7,7 +8,7 @@ export default function Header() {
     <>
       <div className="header-container">
         <h1 className="header-title">
-          <img src="/Assets/Iteration-1-assets/logo.svg" alt="" />
+          <img src={headerImg} alt="" />
         </h1>
       </div>
     </>
