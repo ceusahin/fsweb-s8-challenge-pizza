@@ -7,7 +7,6 @@
 }
 
 .card-left {
-  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-1.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0.47rem;
@@ -47,7 +46,6 @@
 }
 
 .card-right-1 {
-  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0.47rem;
@@ -57,7 +55,6 @@
 }
 
 .card-right-2 {
-  background-image: url("../../Assets/Iteration-2-aseets/cta/kart-3.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0.47rem;
